@@ -2,11 +2,12 @@
 
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+import os
 from pathlib import Path
 
 
-HOST = "127.0.0.1"
-PORT = 8000
+HOST = "0.0.0.0"
+PORT = int(os.environ.get("PORT", "8000"))
 WEB_ROOT = Path(__file__).resolve().parent
 
 
